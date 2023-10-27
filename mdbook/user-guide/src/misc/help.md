@@ -25,7 +25,7 @@ Your feedback is valuable! Create documentation-related issues
 guidance can be improved.
 
 If you like technical writing, also consider contributing to
-[the website and user-guide sources](https://github.com/so-dang-cool/dt/tree/gh-pages).
+[the website and user-guide sources](https://github.com/so-dang-cool/dt.plumbing).
 
 ## Packaging
 
