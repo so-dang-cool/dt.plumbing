@@ -2,7 +2,7 @@ name: Deploy dt.plumbing site content
 
 on:
   push:
-    branches: ["gh-pages"]
+    branches: ["core"]
 
   # Allows running the workflow manually from the Actions tab
   workflow_dispatch:
