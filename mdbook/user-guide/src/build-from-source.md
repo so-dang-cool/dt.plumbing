@@ -47,7 +47,7 @@ git clone https://github.com/so-dang-cool/dt.git \
 
 ## 2. Build with Zig from rtx
 
-The dt source tree contains an up-to-date `.tool-versions` file for rtx.
+1. [Install rtx](https://github.com/jdx/rtx#installation)
 
 ```
 git clone https://github.com/so-dang-cool/dt.git \
