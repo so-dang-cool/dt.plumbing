@@ -1,9 +1,5 @@
 # Building from source
 
-A prerequisite for all options is installing Zig.
-
-[Install Zig 0.11.+](https://ziglang.org/download/)
-
 ## Getting updates
 
 If you aren't installing from a package manager you won't get updates. The
@@ -20,54 +16,100 @@ release notifications for the GitHub project.
 It's not critical to follow every update, but the notifications can be useful
 as an occasional reminder until your package manager is supported.
 
+## Dependencies
 
-## Build from source (Vanilla)
+dt builds with Zig 0.11.x and 0.12.x (pre-release)
+
+## Recommendations
+
+If you are only ever going to develop with a single version of Zig, I recommend
+simply installing it from upstream.
+
+If you already develop with multiple versions of Zig, you probably already have
+figured out how to manage versions. If not, I personally recommend either rtx or aqua.
+
+If you're going to be installing a lot of Zig-built executables, check out crozbi.
 
 
-Clone and build:
+# Build instructions
+
+## 1. Build with Zig from upstream downloads
+
+Zig can be obtained from: https://ziglang.org/download/
+
+After installing Zig, you can build with:
 
 ```
-git clone https://github.com/so-dang-cool/dt.git
-cd ./dt
-zig build -Doptimize=ReleaseSmall
+git clone https://github.com/so-dang-cool/dt.git \
+  && cd ./dt \
+  && zig build
 ```
 
-The resulting binary will be available in `./zig-out/bin/dt`.
+## 2. Build with Zig from rtx
 
-
-## Build from source (Nix)
-
-Prerequisites
-
-1. [Install][install-nix] or [upgrade to][upgrade-nix] the latest Nix release
+The dt source tree contains an up-to-date `.tool-versions` file for rtx.
 
 ```
-git clone https://github.com/so-dang-cool/dt.git
-cd ./dt
-nix build
+git clone https://github.com/so-dang-cool/dt.git \
+  && cd ./dt \
+  && rtx i \
+  && zig build
 ```
 
-[install-nix]: https://nixos.org/manual/nix/unstable/installation/installation
-[upgrade-nix]: https://nixos.org/manual/nix/unstable/installation/upgrading
+## 3. Build with Zig from asdf
+
+1. [Install asdf](https://asdf-vm.com/guide/getting-started.html)
+
+```
+git clone https://github.com/so-dang-cool/dt.git \
+  && cd ./dt \
+  && asdf install \
+  && zig build
+```
+
+## 4. Build with Zig from aqua
+
+1. [Install aqua](https://aquaproj.github.io/docs/install)
+
+```
+git clone https://github.com/so-dang-cool/dt.git \
+  && cd ./dt \
+  && aqua i \
+  && zig build
+```
+
+## 5. Build as a Nix flake
+
+1. [Install Nix][nix-install] or [upgrade Nix][nix-upgrade] to the latest release
+2. [Enable Flakes][nix-flakes]
+
+```
+git clone https://github.com/so-dang-cool/dt.git \
+  && cd ./dt \
+  && nix build
+```
+
+[nix-install]: https://nixos.org/manual/nix/unstable/installation/installation
+[nix-upgrade]: https://nixos.org/manual/nix/unstable/installation/upgrading
+[nix-flakes]: https://nixos.wiki/wiki/Flakes
 
 
-## Build from source (crozbi)
+## 6. Build and install with crozbi
 
-Prerequisites
-
-1. Install the [crozbi](https://github.com/so-dang-cool/crozbi) Zig installer.
+1. [Install crozbi](https://github.com/so-dang-cool/crozbi)
 
 ```
 crozbi so-dang-cool/dt
 ```
 
 
-## Cross-compiling
+# Cross-compiling
 
-The project's `build.zig` is pre-configured to compile for all
+The project's `build.zig` is configured to compile for all dt's
 known-supported platforms.
 
-With the project cloned:
+With the project cloned, Zig installed, and the source root as
+your current working directory, run:
 
 ```
 zig build cross
