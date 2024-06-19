@@ -1,58 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>dt: duck tape for your unix pipes</title>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css">
     <link rel="stylesheet" href="style.css">
 
     <!-- Thanks to https://favicomatic.com -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128">
 
     <!-- Social media stuff -->
-    <meta property="og:url" content="https://dt.plumbing/" />
-    <meta property="og:title" content="dt: duct tape for unix pipes" />
-    <meta property="og:description" content="dt is a functional programming riff on shell one-liners. It's useful for many situations, its simple syntax makes it easy to write and read, and dt is for solving problems with no pretense of elegance. It's meant to supplement (not replace!) other tools like awk, sed, xargs, and shell built-ins. A functional programming riff on Python/Ruby/Perl one-liners, with extremely minimal syntax that's easy to read and easy to reason about. " />
+    <meta property="og:url" content="https://dt.plumbing/">
+    <meta property="og:title" content="dt: duct tape for unix pipes">
+    <meta property="og:description" content="dt is a functional programming riff on shell one-liners. It's useful for many situations, its simple syntax makes it easy to write and read, and dt is for solving problems with no pretense of elegance. It's meant to supplement (not replace!) other tools like awk, sed, xargs, and shell built-ins. A functional programming riff on Python/Ruby/Perl one-liners, with extremely minimal syntax that's easy to read and easy to reason about. ">
     <meta property="og:image" content="https://dt.plumbing/img/preview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="640">
     <meta property="og:image:height" content="320">
 
-    <meta name="application-name" content="&nbsp;"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <meta name="application-name" content="&nbsp;">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png">
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png">
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png">
     <!-- /favicons -->
   </head>
   <body>
     <div id="strip">
-      <header><center>
+      <header class='center'>
         <h1 id="logo">
           <img alt="dt" src="/img/dt-logo-white.svg" height="256" width="256">
         </h1>
-        <h2><pre>duct tape for your unix pipes</pre></h2>
-      </center></header>
+        <h2><code>duct tape for your unix pipes</code></h2>
+      </header>
 
       <main>
         <hr>
 
 <!-- toc -->
 
-        <center>
+        <div class='center'>
           <h2><a id="toc"></a>Quick Links</h2>
           <ul class="nodecorate">
             <li><a href="#intro">What's dt?</a></li>
@@ -67,7 +67,7 @@
             <li>⌾</li>
             <li><a href="/user-guide/misc/duct-tape.html">Is it "duct" or "duck" tape?</a></li>
           </ul>
-        </center>
+        </div>
 
         <hr>
 
@@ -233,7 +233,7 @@
 
 <!-- footer -->
 
-      <footer class="lighter"><center>
+      <footer class="lighter center">
         <p><a href="https://github.com/so-dang-cool/dt">Project source</a></p>
         <p><a href="https://github.com/so-dang-cool/dt.plumbing">Site source</a></p>
         <p>
@@ -246,7 +246,7 @@
         <hr>
         <p>Remember, I'm pullin' for ya,<br>we're all in this together.</p>
         <p>2022 <a href="https://so.dang.cool">Justin Hill</a></p>
-      </center></footer>
+      </footer>
     </div>
   </body>
 </html>
